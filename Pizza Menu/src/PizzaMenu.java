@@ -10,6 +10,7 @@ public class PizzaMenu
 	private JRadioButton handCrustButton;
 	private JRadioButton deepCrustButton;
 	private ButtonGroup crustButtonGroup;
+	
 	// check boxes
 	private JCheckBox pepperoniBox;
 	private JCheckBox sausageBox;
@@ -40,6 +41,7 @@ public class PizzaMenu
 
 	public void start()
 		{
+		//puts the name on the frame itself
 		frame = new JFrame("GUI Pizza");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -70,10 +72,12 @@ public class PizzaMenu
 	private JMenu makeFileMenu()
 		{
 		JMenu menu;
-		JMenuItem menuItem; // set up the File menu
+		JMenuItem menuItem; 
+		
+		// set up the File menu
 		menu = new JMenu("File");
 		menu.setMnemonic(KeyEvent.VK_F);
-
+		
 		// add New menu item
 		menuItem = new JMenuItem("New Order");
 		menuItem.setMnemonic(KeyEvent.VK_N);
@@ -81,14 +85,16 @@ public class PizzaMenu
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
 				Event.CTRL_MASK));
 		menu.add(menuItem);
-
+		
 		// add Save menu item
 		menuItem = new JMenuItem("Save Order");
 		menuItem.setMnemonic(KeyEvent.VK_S);
 		menuItem.addActionListener(new SaveListener());
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
 				Event.CTRL_MASK));
-		menu.add(menuItem); // add Exit menu item
+		menu.add(menuItem); 
+		
+		// add Exit menu item
 		menu.addSeparator();
 		menuItem = new JMenuItem("Exit");
 		menuItem.setMnemonic(KeyEvent.VK_X);
@@ -103,10 +109,12 @@ public class PizzaMenu
 	private JMenu makeHelpMenu()
 		{
 		JMenu menu;
-		JMenuItem menuItem; // set up the Help menu
+		JMenuItem menuItem; 
+		
+		// set up the Help menu
 		menu = new JMenu("Help");
 		menu.setMnemonic(KeyEvent.VK_H);
-
+		
 		// add About menu item
 		menuItem = new JMenuItem("About GUI Pizza");
 		menuItem.setMnemonic(KeyEvent.VK_A);
@@ -123,15 +131,19 @@ public class PizzaMenu
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		panel.setBorder(BorderFactory.createTitledBorder("Choose a Crust"));
 		crustButtonGroup = new ButtonGroup();
+		
 		regularCrustButton = new JRadioButton("Regular Crust", true);
 		crustButtonGroup.add(regularCrustButton);
 		panel.add(regularCrustButton);
+		
 		thinCrustButton = new JRadioButton("Thin Crust", false);
 		crustButtonGroup.add(thinCrustButton);
 		panel.add(thinCrustButton);
+		
 		handCrustButton = new JRadioButton("Hand-Tossed Crust", false);
 		crustButtonGroup.add(handCrustButton);
 		panel.add(handCrustButton);
+		
 		deepCrustButton = new JRadioButton("Deep-Dish Crust", false);
 		crustButtonGroup.add(deepCrustButton);
 		panel.add(deepCrustButton);
@@ -148,20 +160,28 @@ public class PizzaMenu
 
 		pepperoniBox = new JCheckBox("Pepperoni", false);
 		panel.add(pepperoniBox);
+		
 		sausageBox = new JCheckBox("Sausage", false);
 		panel.add(sausageBox);
+		
 		cheeseBox = new JCheckBox("Extra Cheese", false);
 		panel.add(cheeseBox);
+		
 		pepperBox = new JCheckBox("Bell Peppers", false);
 		panel.add(pepperBox);
+		
 		onionBox = new JCheckBox("Onions", false);
 		panel.add(onionBox);
+		
 		mushroomBox = new JCheckBox("Mushrooms", false);
 		panel.add(mushroomBox);
+		
 		oliveBox = new JCheckBox("Olives", false);
 		panel.add(oliveBox);
+		
 		anchovyBox = new JCheckBox("Anchovies", false);
 		panel.add(anchovyBox);
+		
 		contentPane.add(panel, BorderLayout.CENTER);
 		}
 
